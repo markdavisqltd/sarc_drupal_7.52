@@ -1,0 +1,2049 @@
+// Import external libraries.
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "toolkit-no-css";
+
+// Import variables, abstractions, base styles and components using globbing.
+//
+// Globbing will always import files alphabetically. Optimally, all your
+// components should be self-contained and explicit enough to not have any
+// contained styles leak into unrelated components: The import order should not
+// affect the result.
+//
+// If there are variables, functions or mixins that depend on each other and
+// therefore need to be imported in a specific order you can import them
+// directly. Variables-, function- or mixin providing partials should never
+// output any styles themselves: Importing them multiple times to resolve
+// dependencies shouldn't be a problem.
+@import "variables/**/*";
+@import "abstractions/**/*";
+@import "base/**/*";
+@import "components/**/*";
+@import "font-awesome/font-awesome.scss";
+
+/*------------------------------------*\
+    ELEMENTAL STYLES
+\*------------------------------------*/
+
+* {
+	@include box-sizing(border-box);
+}
+
+body {
+	@include btext(16px, $secondary, 400, normal);
+}
+
+h1, h2, h3, h5 {
+	text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: 700;
+}
+
+h1 {
+	padding: 0 25px;
+	margin: 0 -25px 25px -25px;
+	letter-spacing: 2px;
+	@include font-details(23px);
+}
+
+h2 {
+	margin: 0;
+	letter-spacing: 1px;
+	@include font-details(19px);
+}
+
+h3 {
+	margin: 0;
+	letter-spacing: 1px;
+	@include font-details(16px);
+}
+
+h4 {
+	margin: 0 0 5px;
+	@include font-details(18px);
+}
+
+h5 {
+	margin: 0;
+	letter-spacing: 1px;
+	@include font-details(18px, $white);
+}
+
+p {
+	margin: 0 0 25px 0;
+	line-height: 150%;
+}
+
+a {
+	color: $primary;
+}
+
+ul {
+	&.menu {
+		padding-left: 0;
+		margin: 0;
+		list-style: none;
+	}
+	list-style: disc outside none;
+	margin-top: 0;
+	margin-bottom: 25px;
+}
+
+article {
+	li {
+		line-height: 170%;
+	}
+}
+
+img, media {
+	max-width: 100%;
+	height: auto;
+	@extend .global-mrg-btm;
+}
+
+form {
+	label {
+		margin-bottom: 5px;
+	}
+	input, textarea {
+		padding: 10px;
+		width: 100%;
+		-webkit-transition: border-color 0.30s ease-in-out;
+		-moz-transition: border-color 0.30s ease-in-out;
+		-ms-transition: border-color 0.30s ease-in-out;
+		-o-transition: border-color 0.30s ease-in-out;
+		transition: border-color 0.30s ease-in-out;
+		background: $sec-light;
+		border: 3px solid $sec-light;
+	}
+	input:focus, textarea:focus {
+		outline: none;
+		border: 3px solid $primary;
+		box-shadow: none;
+	}
+	.form-submit {
+		color: #ffffff;
+		background: $spot;
+		font-size: 15px;
+		border: none;
+		@extend .uppercase;
+		&:focus {
+			border: none;
+		}
+	}
+	.form-item label, .form-actions label {
+		font-weight: 400;
+	}
+}
+
+.webform-component-textarea textarea:focus, .webform-component-email input:focus, .webform-component-textfield input:focus {
+	-moz-box-shadow: none;
+  	-webkit-box-shadow: none;
+  	box-shadow: none;
+}
+
+hr {
+	background: $rule;
+}
+
+strong {
+	font-weight: 700;
+}
+
+/*------------------------------------*\
+    UTILITY STYLES
+\*------------------------------------*/
+
+// DRUPAL NONSENSE
+#first-time {
+	display: none;
+}
+//--
+
+.node-type-page {
+	.l-content {
+		h1 {
+			display: none;
+		}
+	}
+}
+
+.l-content {
+	@include clearfix();
+}
+
+.intro-text {
+	margin-bottom: 0;
+}
+
+.left-indent {
+	margin-left: 20px;
+}
+
+.btn-reg {
+	display: block;
+	padding: 10px;
+	margin-top: 25px;
+	text-decoration: none;
+	text-align: center;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	background: $primary;
+	-webkit-transition: background-color 0.30s ease;
+	-moz-transition: background-color 0.30s ease;
+	-ms-transition: background-color 0.30s ease;
+	-o-transition: background-color 0.30s ease;
+	transition: background-color 0.30s ease;
+	@include btext(16px, $white, 600);
+	&:active {
+		background: #3eb0bf;
+	}
+	&:focus {
+		background: #3eb0bf;
+	}
+}
+
+.btn-reg-spot {
+	@extend .btn-reg;
+	background: $spot;
+	&:active {
+		background: #cd5c43;
+	}
+	&:focus {
+		background: #cd5c43;
+	}
+}
+
+.btn-lg {
+	padding: 15px;
+	background: $spot;
+	@include btext(23px, $white, 600);
+}
+
+.teaser-link {
+	a {
+		font-style: italic;
+		@include font-details(13px, $spot, 400, normal);
+	}
+}
+
+.bio-link {
+	a {
+		color: $spot;
+		font-style: italic;
+	}
+}
+
+.breadcrumb {
+	padding: 0 0 25px 0;
+	font-size: 13px;
+	font-style: italic;
+	@extend .uppercase;
+	a {
+		color: $spot;	
+	}
+}
+
+.site-logo img {
+	margin: 15px 25px;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.ital {
+	font-style: italic;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.global-all-caps {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.global-subhead {
+	padding: 25px;
+  	margin: 0 -25px 25px;
+  	background: $prim-light;
+}
+
+.global-mrg-btm {
+	margin-bottom: 25px;
+}
+
+.global-container {
+	padding: 0 25px 25px;
+	margin-bottom: 25px;
+	//position: relative;
+	border: 1px solid $rule;
+}
+
+.global-float-left {
+	width: 48%;
+	float: left;
+}
+
+.global-float-mrg-left {
+	margin-left: 2%;
+}
+
+.global-float-mrg-right {
+	margin-right: 2%;
+}
+
+.details {
+	li {
+		line-height: 160%;
+	}
+	.last-detail {
+		margin: 25px 0;
+		clear: left;
+	}
+}
+
+.downloads-box {
+	padding: 25px;
+	background: $sec-light;
+	@extend .global-mrg-btm;
+}
+
+.downloads-list {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.downloads-list-title {
+	@extend .uppercase;
+}
+
+.deep-link {
+	padding: 35px 25px;
+	background: $primary;
+	@extend .global-mrg-btm;
+	h5 {
+		margin-bottom: 3px;
+		line-height: 20px;
+	}
+	p {
+		margin-bottom: 0;
+		@extend .support-text;
+	}
+}
+
+.deep-link-a {
+	display: block;
+	text-decoration: none;
+}
+
+.deep-link-feature {
+	padding: 40px 40px 40px 75px;
+	background: $sec-light;
+	width: 100%;
+	position: relative;
+	@extend .global-mrg-btm;
+	h5 {
+		margin-bottom: 3px;
+		@include font-details(null, $primary, null, 20px);
+	}
+	p {
+		margin-bottom: 0;
+		@extend .support-text;
+	}
+}
+
+.feat-one {
+	&:before {
+		content: $fa-var-map-marker;
+		font-family: FontAwesome;
+		font-size: 2em;
+		text-align: center;
+		padding-top: 12px;
+		width: 55px;
+		height: 55px;
+		color: $white;
+		background: $secondary;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+.feat-two {
+	&:before {
+		content: $fa-var-pencil-square-o;
+		font-family: FontAwesome;
+		font-size: 2em;
+		text-align: center;
+		padding-top: 12px;
+		width: 55px;
+		height: 55px;
+		color: $white;
+		background: $secondary;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+.support-text {
+	margin-bottom: 0;
+	@extend .uppercase;
+	@include btext(13px, $heading, 600);
+	font-style: italic;
+}
+
+#block-block-25 {
+	padding: 25px;
+	background: $secondary;
+	p {
+		margin-bottom: 0;
+		@include font-details(18px, $white, null, 150%);
+	}
+	span {
+		color: $primary;
+	}
+}
+
+.title-list-item {
+	@include font-details(19px, null, 600);
+	@extend .uppercase;
+}
+
+.field--name-field-intro-img-text {
+	background-size: 100% auto;
+}
+
+.views-field-field-intro {
+	@extend .global-mrg-btm;
+	p {
+		margin-bottom: 0;
+		@include font-details(19px, null, 600);
+	}
+}
+
+.field--name-field-page-intro {
+	p {
+		@include font-details(19px, null, 600);
+	}
+}
+
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+
+.mobile-redirect {
+	margin-bottom: 0;
+	padding: 25px 25px 0;
+	a {
+		color: $spot;
+		font-weight: 600;
+	}
+}
+
+.block--block-40 {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	z-index: 999;
+	display: none;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.goTo-top { 
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+	&:before {
+		content: $fa-var-chevron-circle-up;
+		font-family: FontAwesome;
+		font-size: 2.5em;
+		text-align: center;
+		color: $white;
+	}
+	&:focus, &:active {
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+}
+
+/*------------------------------------*\
+    SECTION STYLES
+\*------------------------------------*/
+
+// PAGE STYLES
+.front {
+	h1 {
+		display: none;
+	}
+}
+
+.node-type-secondary-landing-page {
+	h1 {
+		display: block;
+	}
+	h1 {
+		background: $white;
+	}
+}
+
+.l-content {
+	position: relative;
+	padding: 25px;
+}
+
+.l-region--highlighted {
+	overflow: auto;
+}
+
+// HEADER STYLES
+.l-branding {
+	padding: 0;
+	@include clearfix();
+	h2 {
+		display: none;
+	}
+}	
+
+//// SITE LOGO
+#block-block-37 {
+	margin: 25px 0 25px 25px;
+	float: left;
+	width: 238px;
+	height: 58px;
+}
+
+.logo-wrap {
+	margin: 0;
+	padding: 0;
+}
+
+.front .logo-wrap {
+	display: block;
+}
+
+.logo-link {
+	display: block;
+	border: 0;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	background: url(http://sarc.qltdclient.com/sites/default/files/sarc_logo_web.png);
+	background-repeat: no-repeat;
+	width: 238px;
+	height: 58px;
+}
+
+.pull-menu {
+	margin-bottom: 0;
+	clear: left;
+	a {
+		display: block;
+		padding: 10px 25px;
+		color: $prim-light;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 600;
+		text-align: right;
+		background: $secondary;
+		@include btext(16px);
+	}
+}
+
+#block-menu-menu-main-navigation {
+	display: none;
+	background: $secondary;
+	li {
+		@include nav-styles-li();
+		position: relative;
+		.more-opt {
+			position: absolute;
+			right: 25px;
+			top: 0;
+		}
+		a {
+			@include nav-styles-a();
+		}
+		ul {
+			display: none;
+			margin: 0 -25px;
+			li {
+				padding: 10px 25px;
+				background: $nav-bkgd;
+				border-top: none;
+				border-bottom: 1px solid #5f5f5f;
+				&.first {
+					border-top: 1px solid #5f5f5f;
+				}
+				&.last {
+					border-bottom: none;
+				}
+				a {
+					margin: 0;
+				}
+			}
+			.more-opt {
+				display: none;
+			}
+		}
+	}
+}
+
+#block-menu-menu-utility-nav {
+	display: none;
+	background: $secondary;
+	li {
+		@include nav-styles-li();
+		a {
+			@include nav-styles-a();
+		}
+	}
+}
+
+#block-search-form {
+	display: none;
+	background: $footer;
+	width: 100%;
+	padding: 10px 15px;
+	input {
+		padding: 5px;
+		float: left;
+		width: 80%;
+		height: 30px;
+		background: $white;
+		&.form-submit {
+			padding: 5px;
+			float: left;
+			width: 20%;
+			height: 30px;
+			color: $white;
+			background: $primary;
+			border: none;
+		}
+	}
+}
+
+.search-block-form .form-submit {
+	font-family: FontAwesome;
+}
+
+.l-region--highlighted {
+	background: $sec-light;
+	.block--views {
+		padding: 25px 25px 0 25px;
+	}
+}
+
+// SECONDARY LANDING PAGES WITH INTROS
+.page-node-39, .page-node-93, .page-node-43 {
+	.l-region--highlighted {
+		h1 {
+			background: $sec-light;
+		}
+	}
+	.l-content {
+		h1 {
+			display: none;
+		}
+	}
+}
+
+.page-node-43 {
+	.l-page {
+		.l-header {
+			border-bottom: none;
+		}
+	}
+}
+
+// HOMEPAGE (FRONT) STYLES
+.front .l-region--highlighted {
+	background: $sec-light;
+	padding: 25px;
+	.block--views {
+		padding: 0;
+	}
+}
+
+.front {
+	.l-content {
+		margin: 0;
+	}
+	article {
+		display: none;
+	}
+	.feed-icon {
+		display: none;
+	}
+}
+
+.view-homepage-feature {
+	@include clearfix();
+	.views-row {
+		margin-bottom: 4%;
+		width: 48%;
+		float: left;
+	}
+	.views-row-odd {
+		margin-right: 2%;
+	}
+	.views-row-even {
+		margin-left: 2%;
+	}
+	.views-row-3, .views-row-4 {
+		margin-bottom: 0;
+	}
+	img {
+		margin-bottom: 0;
+       // max-height:146px;
+	}
+}
+
+.homepage-feature-content {
+	margin-top: -5px;
+	background: $primary;
+	@extend .uppercase;
+	.support-text {
+		display: none;
+	}
+}
+
+.homepage-feature-title {	
+	letter-spacing: 1px;
+	@include font-details(null, $white, 700);
+}
+
+.feature-link {
+	display: block;
+	padding: 15px;
+	height: 98px;
+	text-decoration: none;
+}
+
+// BRAND STATEMENT (FRONT)
+#block-block-24 {
+	padding: 0 10px;
+	p {
+		text-align: center;
+		@include font-details(23px, null, null, 150%);
+	}
+}
+
+#block-views-home-sub-feature-block {
+	h4 {
+		margin-bottom: 0;
+	}
+	.views-row {
+		padding: 40px 30px 40px 75px;
+		margin-bottom: 20px;
+		background: $sec-light;
+		width: 100%;
+		position: relative;
+		a {
+			margin-bottom: 3px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			@include font-details(17px, null, 700, 19px);
+		}
+	}
+	.views-row-first {
+		&:before {
+			content: $fa-var-map-marker;
+			font-family: FontAwesome;
+			font-size: 2em;
+			text-align: center;
+			padding-top: 12px;
+			width: 55px;
+			height: 55px;
+			color: $white;
+			background: $secondary;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	.views-row-last {
+		&:before {
+			content: $fa-var-pencil-square-o;
+			font-family: FontAwesome;
+			font-size: 2em;
+			text-align: center;
+			padding-top: 12px;
+			width: 55px;
+			height: 55px;
+			color: $white;
+			background: $secondary;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+#block-views-event-promo-homepage-block {
+	clear: both;
+}
+
+.event-feature {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid $sec-med;
+	ul {
+		padding-left: 0;
+		list-style: none;
+	}
+	.btn-reg {
+		margin-top: 0;
+	}
+}
+
+.event-date {
+	li {
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 14px;
+		&.date {
+			@include font-details(23px, $primary, 700);
+		}
+	}	
+}
+
+.event-location {
+	margin-bottom: 25px;
+	.event-title {
+		margin-bottom: 5px;
+		@include font-details(18px, null, 700);
+		@extend .uppercase;
+	}
+}
+
+.event-feature, .event-item {
+	ul {
+		padding-left: 0;
+	}
+}
+
+.test-item {
+	@include font-details(20px, $primary, 600);
+}
+
+.view-news-feature, .view-bio-feature {
+	padding: 0 25px 0 25px;
+	border: 1px solid $rule;
+	@include clearfix();
+	.views-field-view-node, .views-field-nothing {
+		width: 50%;
+		float: left;	
+		a {
+			@include font-details(14px, $spot);
+			font-style: italic;
+		}
+	}
+}
+
+.view-bio-feature {
+	padding: 0;
+	.views-field-view-node {
+		a {
+			padding-left: 25px;
+		}
+	}
+	.views-field-nothing {
+		a {
+			padding-right: 25px;
+		}
+	}
+}
+
+.views-field-nothing {
+	text-align: right;
+}
+
+.view-news-feature {
+	margin-bottom: 25px;
+}
+
+.views-field-field-bio-image {
+	img {
+		margin: 25px auto 0 auto;
+		display: block;
+		width: 120px;
+	}
+}
+
+.latest-item, .item-sub-title {
+	margin: 0 -25px;
+	color: $secondary;
+	background: $prim-light;
+}
+
+.view-bio-feature {
+	.latest-item, .item-sub-title {
+		margin: 0;
+	}
+}
+
+.latest-item {
+	padding: 25px 0 0 25px;
+}
+
+.item-sub-title {
+	padding: 0 0 25px 25px;
+}
+
+.views-field-field-news-copy {
+	padding-top: 25px;
+}
+
+.views-field-field-bio-copy {
+	padding: 25px 25px 0;
+}
+
+// SIDEBAR
+.l-region--sidebar-first {
+	padding: 0 25px;
+}
+
+// FOOTER
+.l-footer {
+	@include clearfix();
+	padding: 0;
+	background: $secondary;
+	color: $white;
+	h2 {
+		color: $white;
+	}
+	p {
+		text-align: center;
+		color: $white;
+	}
+	a {
+		color: $prim-light;
+	}
+}
+
+.l-region--footer {
+	padding: 0 25px;
+}
+
+#block-block-2 {
+	padding: 25px 0;
+	background: $secondary;
+}
+
+.soc-icons {
+	width: 250px;
+	padding-left: 0;
+	margin: 0 auto;
+	list-style: none;
+	@include clearfix();
+	li {
+		float: left;
+		width: 33.3333333%;
+		text-align: center;
+		a {
+			color: $social;
+		}
+	}
+}
+
+#block-views-recent-news-block {
+	margin-bottom: 50px;
+	h2 {
+		margin-bottom: 15px;
+	}
+	.views-field-title {
+		margin-bottom: 25px;
+	}
+}
+
+#block-views-newsletter-feature-block {
+	padding-bottom: 30px;
+	h2 {
+		margin-bottom: 15px;
+	}
+	p {
+		margin-bottom: 15px;
+		text-align: left;
+		font-style: italic;
+		text-transform: uppercase;
+		@include font-details(14px, null, 400);
+		a {
+			display: inline-block;
+			white-space: nowrap;
+		}
+	}
+	form {
+		label {
+			margin-bottom: 3px;
+			@include font-details(14px, null, 400);
+		}
+		input {
+			padding: 0;
+			width: 100%;
+			height: 35px;
+			line-height: 35px;
+			color: $social;
+			&.form-submit {
+				background: $primary;
+				border: none;
+				color: $white;
+			}
+		}
+	}
+}
+
+#block-block-3 {
+	padding: 25px;
+	text-align: center;
+	background: $footer;
+	ul {
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+	}
+	li {
+		line-height: 25px;
+		&.phone, &.email {
+			margin: 15px 0;
+		}
+		a {
+			display: inline-block;
+		}
+	}
+}
+
+.footer-utility-nav {
+	font-size: 14px;
+	@extend .uppercase;
+	li {
+		display: inline-block;
+	}
+	.first-item {
+		margin-right: 2%;
+	}
+	.last-item {
+		margin-left: 2%;
+	}
+}
+
+#block-block-1 {
+	padding: 15px 25px;
+	text-align: center;
+	background: $white;
+	span {
+		margin-bottom: 0;
+		@include font-details(11px, $secondary);
+	}
+}
+
+// /////////////////
+// ** SECTION STYLES
+// /////////////////
+
+// JOIN SARC
+.view-join-sarc-feature {
+	@include clearfix();
+}
+
+.participate {
+	border: 1px solid $rule;
+	@extend .global-mrg-btm;
+	h2 {
+		padding: 25px;
+		margin: 0;
+		background: $prim-light;
+	}
+	img {
+		margin-bottom: 0;
+	}
+	.participate-inner {
+		padding: 25px;
+	}
+	ul {
+		padding-left: 25px;
+		margin: 0;
+		li {
+			line-height: 170%;
+		}
+	}
+}
+
+//// SARC CENTERS
+.page-node-38, .page-node-126 {
+	.l-main {
+		@include clearfix();
+		background: $footer;
+	}
+	.l-content {
+		h1 {
+			display: none;
+		}
+	}
+	.l-region--highlighted {
+		margin-bottom: 0;
+		background: $white;
+		border-bottom: 7px solid $primary;
+	}
+	.breadcrumb {
+		display: none;
+	}
+}
+
+.centers-intro {
+	ul {
+		display: none;
+		list-style: none;
+	}
+	.intro-btns {
+		display: none;
+	}
+}
+
+.view-sarc-centers {
+	h3 {
+		color: $white;
+		margin-bottom: 20px;
+	}
+	p {
+		margin-bottom: 0;
+		color: $white;
+	}
+	a {
+		color: $prim-light;
+	}
+	.views-row {
+		margin-bottom: 25px;
+	}
+	.views-row-last {
+		padding-bottom: 25px;
+		border-bottom: 1px solid $rule;
+	}
+	.views-field-field-site-name, .views-field-field-site-info, .views-field-field-site-location {
+		margin-left: 25px;
+	}
+}
+
+.views-field-field-site-location {
+	color: $white;
+}
+
+.tel {
+	abbr {
+		@extend .hidden;
+	}
+}
+
+.geo {
+	@extend .hidden;
+}
+
+#block-views-google-map-locations-block {
+	@extend .hidden;
+}
+
+//// WHAT IS A SARC CENTER?
+.page-node-79 {
+	.field--name-field-intro-img-text {
+		margin-bottom: 25px;
+		border: 0;
+		font: 0/0 a;
+		text-shadow: none;
+		color: transparent;
+		background: url(/sites/default/files/sarc-center.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: 0;
+		padding-top: 29.6296%;
+	}
+}
+
+// SARC RESEARCH
+
+//// SARC CLINICAL TRIALS
+.node-type-sarc-trial {
+	h1 {
+		margin-bottom: 0;
+	}
+}
+
+.page-node-27 {
+	.field--name-field-intro-img-text {
+		margin-bottom: 25px;
+		border: 0;
+		font: 0/0 a;
+		text-shadow: none;
+		color: transparent;
+		background: url(/sites/default/files/clinical-trials.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: 0;
+		padding-top: 29.6296%;
+	}
+}
+
+.field--name-field-trial-name, .field--name-field-type-of-sarcoma, .field--name-field-drug, .field--name-field-accrual-status, .field--name-field-overall-study-principal-in, .field--name-field-co-principal-investigator {
+	.field__label {
+		@extend .uppercase;
+	}
+}
+
+.field--name-field-trial-schema {
+	.file {
+		a {
+			@extend .uppercase;
+		}
+	}
+	.field__label {
+		font-weight: 400;
+	}
+}
+
+.field--name-field-trial-name, .field--name-field-type-of-sarcoma, .field--name-field-drug, .field--name-field-accrual-status {
+	margin-bottom: 20px;
+}
+
+.field--name-field-overall-study-principal-in, .field--name-field-co-principal-investigator {
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.field--name-field-trial-status {
+	@extend .uppercase;
+	@include btext(21px);
+	@extend .global-mrg-btm;
+}
+
+.field--name-field-trial-name {
+	@include font-details(19px, null, 600);
+	@extend .global-mrg-btm;
+}
+
+.field--name-field-trial-schema, .field--name-field-additional-downloads {
+	padding: 25px;
+	background: $sec-light;
+	@extend .global-mrg-btm;
+	.field__label {
+		margin-bottom: 5px;
+		@include btext(16, null, 400);
+		@extend .uppercase;
+	}
+}
+
+.field--name-field-trial-schema {
+	margin-top: 25px;
+}
+
+.node-type-sarc-trial {
+	.file-icon {
+		margin-bottom: 0;
+	}
+}
+
+.field--name-field-criteria {
+	@extend .global-container;
+	padding-bottom: 0;
+	h2 {
+		@extend .global-subhead;
+	}
+	ul {
+		padding-left: 20px;
+	}
+}
+
+.field--name-field-outbound-link {
+	padding: 25px;
+	background: $sec-light;
+	@extend .global-mrg-btm;
+	p {
+		margin-bottom: 0;
+		@extend .uppercase;
+	}
+}
+
+.sarc-trial-wrap {
+	padding: 0 25px;
+	@extend .global-mrg-btm;
+	border: 1px solid $rule;
+	h2 {
+		@extend .global-subhead;
+	}
+	.first {
+		padding-top: 0;
+	}
+	.last {
+		border-bottom: none;
+	}
+}
+
+#block-views-active-sarc-trials-block {
+	@extend .sarc-trial-wrap;
+}
+
+#block-views-completed-sarc-trials-block {
+	@extend .sarc-trial-wrap;
+	a {
+		color: $spot;
+	}
+	.btn-reg-spot {
+		color: $white;
+	}
+}
+
+.sarc-trial-item {
+	padding: 25px 0;
+	border-bottom: 1px solid $rule;
+	.views-field-title {
+		@extend .global-mrg-btm;
+	}
+	.views-field-view-node, .views-field-title {
+		@include btext(null, null, 700);
+	}
+	.views-label {
+		text-transform: uppercase;
+	}
+}
+
+.views-field-field-trial-name {
+	@extend .global-mrg-btm;
+}
+
+//// SUBMIT A CONCEPT
+.page-node-76 {
+	.field--name-field-intro-img-text {
+		margin-bottom: 25px;
+		border: 0;
+		font: 0/0 a;
+		text-shadow: none;
+		color: transparent;
+		background: url(/sites/default/files/submit-concept.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: 0;
+		padding-top: 29.6296%;
+	}
+}
+
+//biospecimen bank
+.page-node-338 {
+	.field--name-field-intro-img-text {
+		margin-bottom: 25px;
+		border: 0;
+		font: 0/0 a;
+		text-shadow: none;
+		color: transparent;
+		background: url(/sites/default/files/biospecimen-bank-2x.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: 0;
+		padding-top: 29.6296%;
+	}
+}
+
+//TOOLS FOR RESEARCHERS
+.page-node-337 {
+	.field--name-field-intro-img-text {
+		margin-bottom: 25px;
+		border: 0;
+		font: 0/0 a;
+		text-shadow: none;
+		color: transparent;
+		background: url(/sites/default/files/test-tubes-2x.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: 0;
+		padding-top: 29.6296%;
+	}
+}
+
+//// PARTNERING WITH INDUSTRY
+.page-node-32 {
+	.field--name-field-intro-img-text {
+		margin-bottom: 25px;
+		border: 0;
+		font: 0/0 a;
+		text-shadow: none;
+		color: transparent;
+		background: url(/sites/default/files/industry-partner.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: 0;
+		padding-top: 29.6296%;
+	}
+}
+
+.value-graph {
+	padding: 25px;
+	@extend .global-mrg-btm;
+	background: $sec-light;
+}
+
+.circle {
+	display: table;
+	padding: 20px;
+	margin: 0 auto 15px auto;
+	width: 220px;
+	height: 220px;
+	border: 5px solid #d8d8d8;
+	background: $primary;
+	text-transform: uppercase;
+	text-align: center;
+	@include border-radius(50%);
+	@include font-details(18px, $white, 700);
+	div {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+.first-circle {
+	background: #c2d5d8;
+}
+
+.second-circle {
+	background: #8dcfd8;
+}
+
+.icon-plus {
+	margin-bottom: 10px;
+	text-align: center;
+	&:before {
+		content: $fa-var-plus;
+		font-family: FontAwesome;
+		font-size: 1.5em;
+		color: $spot;
+	}	
+}
+
+.result {
+	display: block;
+	margin-bottom: 0;
+	padding-left: 0;
+	text-align: center;
+	li {
+		display: inline-block;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		@include btext(19px, $primary, 700);
+		&.icon-equals {
+			margin-right: 10px;
+			@include font-details(30px, $spot);
+		}
+	}
+}
+
+.step {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.descript {
+    margin-left: 50px;
+	padding: 15px;
+	background: $sec-light;
+	h5 {
+		color: $secondary;
+	}
+	ul {
+		margin: 0 0 0 10px;
+		padding-left: 20px;
+		list-style: disc outside none;
+	}
+}
+
+.step-number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    color: #fff;
+    text-align: center; 
+}
+.first-number {
+    background: #c2d5d8;
+}
+
+.first-number:after {
+    content: '';
+    border-color: #c2d5d8 transparent transparent transparent;
+    border-style: solid;
+    border-width: 12px 25px 15px 25px;
+    width:0;
+    height:0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.middle-number {
+    background: #8dcfd8;
+}
+
+.middle-number:after {
+    content: '';
+    border-color: #8dcfd8 transparent transparent transparent;
+    border-style: solid;
+    border-width: 12px 25px 15px 25px;
+    width:0;
+    height:0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.next-last-number {
+    background: #45C3D3;
+}
+
+.next-last-number:after {
+    content: '';
+    border-color: #45C3D3 transparent transparent transparent;
+    border-style: solid;
+    border-width: 12px 25px 15px 25px;
+    width:0;
+    height:0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.last-number {
+    background: #e6674a;
+}
+
+.last-number:after {
+    content: '';
+    border-color: #e6674a transparent transparent transparent;
+    border-style: solid;
+    border-width: 12px 25px 15px 25px;
+    width:0;
+    height:0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.down-arrow:after {
+    content: '';
+    border-color: #fff transparent transparent transparent;
+    border-style: solid;
+    border-width: 12px 25px 15px 25px;
+    width:0;
+    height:0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.num {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 30px;
+    text-align:center;
+    width:100%;
+    display:table;
+}
+
+.table-div {
+	display: table;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+.cell-div {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 30px;
+	
+}
+
+// ATTEND AN EVENT
+.event-item {
+	padding: 25px;
+	border: 1px solid $rule;
+	@extend .global-mrg-btm;
+	a {
+		display: inline-block;
+	}
+	ul {
+		margin: 0 0 5px 0;
+		list-style: none;
+	}
+	p {
+		margin-bottom: 0;
+	}
+	.event-item-info {
+		margin: 0;
+	}
+}
+
+.event-item-date {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	border-bottom: 1px solid $rule;
+	.event-date {
+		display: block;
+		@include font-details(23px, $primary, 700);
+	}
+}
+
+//// SARC MEETING AT ASCO
+.page-node-39, .page-node-93 {
+	.l-region--highlighted {
+		margin-bottom: 0;
+		ul {
+			margin: 0;
+			list-style: none;
+			li {
+				line-height: 160%;
+			}
+		}
+		h1 {
+			background: $sec-light;
+		}
+		h3 {
+			text-transform: none;
+			//@include notos(16px, null, 700);
+		}
+	}
+	.l-content {
+		h1 {
+			display: none;
+		}
+	}
+	.btn-reg {
+		@extend .global-mrg-btm;
+	}
+}
+
+//// SARC MEETING AT CTOS
+
+// WHAT IS SARCOMA?
+
+//// SOFT TISSUE SARCOMA
+.anchor-nav {
+	padding-bottom: 25px;
+	border-bottom: 1px solid $rule;
+	list-style: none;
+	@include clearfix();
+	li {
+		width: 22%;
+		float: left;
+		padding: 10px;
+		margin-right: 4%;
+		text-align: center;
+		background: $spot;
+		a {
+			display: block;
+			color: $white;
+			text-decoration: none;
+		}
+	}
+	.last-child {
+		margin-right: 0;
+	}
+}
+
+.field--name-field-page-intro {
+	.anchor-nav {
+		padding-left: 0;
+	}
+}
+
+//// BONE SARCOMA
+
+//// WHY CHOOSE A CLINICAL TRIAL?
+.page-node-70 {
+	.field--name-field-intro-img-text {
+		margin-bottom: 25px;
+		border: 0;
+		font: 0/0 a;
+		text-shadow: none;
+		color: transparent;
+		background: url(/sites/default/files/why-choose.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: 0;
+		padding-top: 29.6296%;
+	}
+}
+
+// ABOUT SARC
+
+article {
+	.field--name-field-sub-title {
+		@extend .uppercase;
+		@include font-details(18px, $heading, 700);
+	}
+}
+
+//// WHO WE ARE
+.page-node-36 {
+	.field--name-field-intro-img-text {
+		margin-bottom: 25px;
+		border: 0;
+		font: 0/0 a;
+		text-shadow: none;
+		color: transparent;
+		background: url(/sites/default/files/organizational-structure.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: 0;
+		padding-top: 29.6296%;
+	}
+}
+
+.view-board-of-directors, .view-president-ceo, .view-scientific-leadership, .view-sarc-operations-office {
+	@extend .global-container;
+	.views-row {
+		margin-bottom: 25px;
+	}
+	.views-row-1 {
+		.views-field-view-node {
+			display: none;
+		}
+		.org-heading {
+			@extend .global-subhead;
+			font-size: 19px;
+		}
+	}
+	.views-row-last {
+		margin-bottom: 0;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.view-sarc-operations-office {
+	margin-bottom: 0;
+}
+
+.sarc-committee {
+	@extend .global-container;
+	padding-bottom: 10px;
+	ul {
+		list-style: none;
+		padding-left: 0;
+	}
+	li {
+		@extend .global-mrg-btm;
+		@include btext(16px, null, 700);
+		@extend .uppercase;
+		.committee-role {
+			text-transform: none;
+			@include font-details(16px, null, 400);
+		}
+	}
+}
+
+.committee-name {
+	@extend .global-subhead;
+}
+
+//// BIOS
+.node-type-bio {
+	h1 {
+		margin-bottom: 0;
+	}
+	article {
+		img {
+			display: block;
+			margin: 0 auto 25px auto;
+		}
+	}
+	.field--name-field-sarc-title {
+		margin-bottom: 25px;
+		@include font-details(18px, null, 600);
+		@extend .uppercase;
+	}
+}
+
+//// FUNDING OPPORTUNITIES
+.page-node-37 {
+	.field--name-field-intro-img-text {
+		margin-bottom: 25px;
+		border: 0;
+		font: 0/0 a;
+		text-shadow: none;
+		color: transparent;
+		background: url(/sites/default/files/funding.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: 0;
+		padding-top: 29.6296%;
+	}
+}
+
+.funding-list {
+	list-style: none;
+	padding-left: 0;
+	li {
+		@extend .global-mrg-btm;
+	}
+}
+
+//// CAREER DEVELOPMENT AWARD WINNERS
+.view-2010-award-winners, .view-2009-award-winners, .view-2011-award-winners, .view-2012-award-winners, .view-2013-award-winners, .view-2014-award-winners, .view-2014-grant-recipients {
+	@extend .global-container;
+	.views-row {
+		@extend .global-mrg-btm;
+	}
+	.views-row-1 {
+		h3 {
+			font-size: 19px;
+			@extend .global-subhead;
+		}
+		.views-field-view-node {
+			display: none;
+		}
+	}
+	.views-row-last {
+		margin-bottom: 0;
+	}
+	a {
+		color: $spot;
+		font-style: italic;
+	}
+}
+
+.field--name-field-winner-image {
+	img {
+		display: block;
+		margin: 0 auto 25px auto;
+	}
+}
+
+//// SARC SARCOMA S.P.O.R.E.
+.page-node-41 {
+	.field--name-field-intro-img-text {
+		margin-bottom: 25px;
+		border: 0;
+		font: 0/0 a;
+		text-shadow: none;
+		color: transparent;
+		background: url(/sites/default/files/sarcoma-spore.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: 0;
+		padding-top: 29.6296%;
+	}
+}
+
+//// NEWS
+.node-type-news-item {
+	.l-content {
+		h1 {
+			display: block;
+			background: $white;
+		}
+	}
+	.field-name-field-sub-title {
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		@include font-details(18px, null, 900);
+	}
+}
+
+.view-sarc-news {
+	.views-field-title {
+		font-size: 19px;
+		@extend .global-all-caps;
+		@extend .global-mrg-btm;
+	}
+}
+
+// DEDICATIONS
+.page-node-71 {
+	.field--name-field-intro-img-text {
+		margin-bottom: 25px;
+		border: 0;
+		font: 0/0 a;
+		text-shadow: none;
+		color: transparent;
+		background: url(/sites/default/files/dedications.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: 0;
+		padding-top: 29.6296%;
+	}
+}
+
+.node-type-dedication {
+	h1 {
+		margin-bottom: 0;
+	}
+	article {
+		img {
+			display: block;
+			margin: 0 auto 25px auto;
+		}
+	}
+}
+
+.field--name-field-dedication-tagline {
+	p {
+		font-style: italic;	
+		font-size: 18px;
+	}
+}
+
+.view-dedications, .view-sarc-news {
+	margin-bottom: 25px;
+	.views-row {
+		margin-bottom: 25px;
+	}
+	.views-row-last {
+		margin-bottom: 0;
+	}
+}
+
+// DONATE IN HONOR OF A LOVED ONE BLOCK //
+#block-block-27 {
+	.btn-reg {
+		margin-bottom: 25px;
+	}
+}
+
+/*------------------------------------*\
+    MEDIA QUERIES
+\*------------------------------------*/
+
+@media(min-width: $tablet) {
+	@import "tablet";
+}
+
+@media(min-width: $desktop) {
+	@import "desktop";
+}
+
+@media(min-width: $desktop-plus) {
+	@import "desktop-plus";
+}
+
+/*--Pixel Density--*/
+
+// Global
+@media (-webkit-min-device-pixel-ratio: 1.3),
+  (min--moz-device-pixel-ratio: 1.3),
+  (-o-min-device-pixel-ratio: 13/10),
+  (min-resolution: 1.3dppx) {
+  	.logo-link {
+  		background: url(http://sarc.qltdclient.com/sites/default/files/sarc_logo_web-2x.png);
+  		background-repeat: no-repeat;
+  		background-size: cover;
+  		width: 238px;
+  		height: 58px;
+  	}
+  	.page-node-27 {
+	  	.field--name-field-intro-img-text {
+	  		background: url(/sites/default/files/clinical-trials-2x.jpg);
+	  		background-repeat: no-repeat;
+	  		background-size: cover;
+	  		width: 100%;
+	  		height: 100%;
+	  	}
+    }
+    .page-node-76 {
+    	.field--name-field-intro-img-text {
+    		background: url(/sites/default/files/submit-concept-2x.jpg);
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		width: 100%;
+    		height: 100%;
+    	}
+    }
+    .page-node-32 {
+    	.field--name-field-intro-img-text {
+    		background: url(/sites/default/files/industry-partner-2x.jpg);
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		width: 100%;
+    		height: 100%;
+    	}
+    }
+    .page-node-70 {
+    	.field--name-field-intro-img-text {
+    		background: url(/sites/default/files/why-choose-2x.jpg);
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		width: 100%;
+    		height: 100%;
+    	}
+    }
+    .page-node-36 {
+    	.field--name-field-intro-img-text {
+    		background: url(/sites/default/files/organizational-structure-2x.jpg);
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		width: 100%;
+    		height: 100%;
+    	}
+    }
+    .page-node-37 {
+    	.field--name-field-intro-img-text {
+    		background: url(/sites/default/files/funding-2x.jpg);
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		width: 100%;
+    		height: 100%;
+    	}
+    }
+    .page-node-41 {
+    	.field--name-field-intro-img-text {
+    		background: url(/sites/default/files/sarcoma-spore-2x.jpg);
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		width: 100%;
+    		height: 100%;
+    	}
+    }
+    .page-node-79 {
+    	.field--name-field-intro-img-text {
+    		background: url(/sites/default/files/sarc-center-2x.jpg);
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		width: 100%;
+    		height: 100%;
+    	}
+    }
+    .page-node-71 {
+    	.field--name-field-intro-img-text {
+    		background: url(/sites/default/files/dedications-2x.jpg);
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		width: 100%;
+    		height: 100%;
+    	}
+    }
+}
+
+

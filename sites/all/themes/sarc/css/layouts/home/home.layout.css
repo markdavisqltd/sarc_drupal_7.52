@@ -1,0 +1,13 @@
+.l-page {
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .l-page {
+    width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .l-page {
+    width: 1024px;
+  }
+}

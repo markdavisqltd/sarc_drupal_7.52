@@ -1,0 +1,520 @@
+
+// Utility Classes
+
+.deep-link-float {
+	width: 48%;
+	float: left;
+}
+
+.deep-link-right {
+	margin-left: 2%;
+}
+
+.deep-link-left {
+	margin-right: 2%;
+}
+
+.intro-btns {
+	@include clearfix();
+	a {
+		margin-right: 2%;
+		width: 48%;
+		float: left;
+	}
+	.btn-right {
+		margin-right: 0;
+		margin-left: 2%;
+	}
+}
+
+article {
+	.btn-reg {
+		width: 30%;
+	}
+}
+
+.l-main {
+	@include clearfix();
+}
+
+.form-submit {
+	width: 35%;
+}
+
+// /////////////////
+// ** SECTION STYLES
+// /////////////////
+
+// IMAGE REPLACE HEIGHT
+.page-node-27, .page-node-32, .page-node-36, .page-node-37, .page-node-41, .page-node-70, .page-node-76, .page-node-79 {
+	.field--name-field-intro-img-text {
+		min-height: 215px;
+	}
+}
+
+// HOMEPAGE
+.homepage-feature-content {
+	.support-text {
+		display: block;
+	}
+}
+
+.feature-link {
+	height: auto;
+}
+
+#block-block-32, #block-block-33 {
+	width: 48%;
+	float: left;
+}
+
+#block-block-32 {
+	margin-right: 2%;
+}
+
+#block-block-33 {
+	margin-left: 2%;
+}
+
+.event-feature {
+	display: table;
+	padding: 20px 20px 20px 10px;
+	width: 100%;
+	.event-location {
+		margin: 0;
+	}
+	.event-center {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.event-center-first {
+		width: 20%;
+	}
+	.event-center-mid {
+		padding-left: 30px;
+		width: 45%;
+		border-left: 1px solid $sec-med;
+	}
+	.event-center-last {
+		width: 35%;
+	}
+	ul {
+		&.event-date {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+	}
+	.btn-main {
+		margin: 0;
+		width: 100%;
+	}
+}
+
+#block-views-bio-feature-block, #block-views-news-feature-block {
+	width: 48%;
+	float: left;
+}
+
+#block-views-news-feature-block {
+	margin-right: 2%;
+}
+
+#block-views-bio-feature-block {
+	margin-left: 2%;
+}
+
+.view-news-feature, .view-bio-feature {
+	margin-bottom: 0;
+	height: 368px;
+}
+
+.view-bio-feature {
+	.views-row-1 {
+		overflow: hidden;
+	}
+}
+
+.view-bio-feature {
+	padding: 0;
+}
+
+.views-field-field-bio-image {
+	float: right;
+	margin: 15px 15px 0 15px;
+	img {
+		margin: 0;
+		width: 120px;
+	}
+}
+
+#block-block-5 {
+	padding: 0 25px;
+}
+
+#block-block-24 {
+	margin: 0 auto;
+	width: 75%;
+	p {
+		@include font-details(23px, null, null, 160%);
+	}
+}
+
+// SIDEBAR
+
+// FOOTER
+.l-region--footer {
+	@include clearfix();
+}
+
+.soc-icons {
+	width: 35%;
+}
+
+#block-views-recent-news-block, #block-views-newsletter-feature-block {
+	width: 48%;
+	float: left;
+}
+
+#block-views-recent-news-block {
+	margin-right: 2%;
+}
+
+#block-views-newsletter-feature-block {
+	margin-left: 2%;
+}
+
+#block-block-3 {
+	.container {
+		@include clearfix();
+	}
+	.location-info, .contact-info {
+		float: left;
+		width: 37.5%;
+		li {
+			text-align: left;
+			&.phone, &.email {
+				margin: 0;
+			}
+		}
+	}
+}
+
+.footer-utility-nav {
+	margin-top: 50px;
+	width: 25%;
+	float: right;
+	li {
+		float: left;
+		width: 48%;
+		text-align: right;
+	}
+	.first-item {
+		margin-right: 2%;
+	}
+	.last-item {
+		margin-left: 2%;
+	}
+}
+
+// JOIN SARC
+.view-join-sarc-feature {
+	.views-row-first, .views-row-last {
+		width: 48%;
+		float: left;
+	}
+	.views-row-first {
+		margin-right: 2%;
+	}
+	.views-row-last {
+		margin-left: 2%;
+	}
+}
+
+#block-views-intro-what-is-sarcoma-block {
+	@include clearfix();
+}
+
+.intro-text {
+	a {
+		width: 48%;
+		float: left;
+		margin-right: 2%;
+        &.inline {
+            width: auto;
+            float:none;
+           margin-right: 0; 
+        }
+	}
+	.btn-right {
+		margin-right: 0;
+		margin-left: 2%;
+	}
+}
+
+//// SARC CLINICAL TRIALS
+.page-node-27 {
+	.field--name-field-intro-img-text {
+		min-height: 215px;
+	}
+}
+
+.node-type-sarc-trial {
+	.btn-reg {
+		width: 30%;
+	}
+}
+
+.trials {
+	.btn-main {
+		width: 145px;
+	}
+}
+
+.sarc-trial-item {
+	.btn-reg {
+		width: 30%;
+	}
+}
+
+//// DRUG DEVELOPMENT
+.value-graph {
+	text-align: center;
+	.circle-wrap {
+		display: inline-block;
+	}
+	.circle {
+		margin: 0 0 10px 0;
+		width: 175px;
+		height: 175px;
+		float: left;
+		font-size: 16px;
+	}
+	.icon-plus {
+		margin: 85px 0 0 0;
+		width: 70px;
+		float: left;
+	}
+	.result {
+		clear: left;
+	}
+}
+
+.first-step {
+	.descript {
+		overflow: hidden;
+		li {
+			float: left;
+		}
+		.last-li {
+			margin-left: 30px;
+		}
+	}
+}
+
+.first-number {
+	.num {
+		//top: 35%;
+	}
+}
+
+//// WHO WE ARE
+.view-board-of-directors, .view-scientific-leadership, .view-sarc-operations-office {
+	@include clearfix();
+	.views-row-even, .views-row-odd {
+		width: 48%;
+		float: left;
+	}
+	.views-row-odd {
+		margin-left: 2%;
+	}
+	.views-row-even {
+		margin-right: 2%;
+	}
+	.views-row-1 {
+		margin-left: 0;
+		width: 100%;
+		float: none;
+	}
+	.views-row-4, .views-row-6 {
+		clear: left;
+	}
+}
+
+// ATTEND AN EVENT
+.event-item {
+	display: table;
+	padding-left: 0;
+	margin-bottom: 25px;
+	border: 1px solid $rule;
+	@include clearfix();	
+}
+
+.event-item-date, .event-item-info {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.event-item-date {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	width: 20%;
+	border-bottom: none;
+}
+
+.event-item-info {
+	width: 80%;
+	padding-left: 4%;
+	border-left: 1px solid $rule;
+	ul {
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		border-bottom: 1px solid $rule;
+		li {
+			display: inline-block;
+			padding-right: 12px;
+			border-right: 1px solid $rule;
+			&:last-child {
+				padding-left: 8px;
+				border-right: 0;
+			}
+		}
+	}
+}
+
+//// SARC MEETING AT ASCO
+.page-node-39, .page-node-93 {
+	.l-region--highlighted {
+		padding-bottom: 25px;
+		@include clearfix();
+	}
+	.block--views {
+		padding-bottom: 0;
+	}
+}
+
+.view-intro-asco, .view-intro-ctos {
+	@include clearfix();
+	.views-row-1 {
+		overflow: hidden;
+	}
+}
+
+.views-field-field-promo-image {
+	width: 58%;
+	margin-left: 2%;
+	float: right;
+	img {
+		margin-bottom: 0;
+	}
+}
+
+.views-field-field-meeting-info {
+	width: 40%;
+}
+
+.event-details {
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+	.btn-reg {
+		margin-bottom: 25px;
+		width: 50%;
+	}
+}
+
+// WHAT IS SARCOMA?
+.intro-text {
+	ul {
+		@include clearfix();
+		li {
+			width: 48%;
+			float: left;
+			&:first-child {
+				margin-right: 2%;
+			}
+			&:last-child {
+				margin-left: 2%;
+			}
+		}
+	}
+}
+
+//// ORGANIZATIONAL STRUCTURE
+.org {
+	@include clearfix();
+}
+.member {
+	width: 50%;
+	float: left;
+	@include clearfix();
+	a {
+		color: $spot;
+	}
+}
+
+//// BIOS
+.field--name-field-bio-image {
+	float: left;
+	margin: 0 25px 0 0;
+}
+
+.node-type-bio {
+	article {
+		img {
+			display: block;
+			margin: 0;
+		}
+	}
+}
+
+//// FUNDING OPPORTUNITIES
+.funding-list {
+	margin-top: 0;
+	@include clearfix();
+	li {
+		width: 48%;
+		float: left;
+	}
+	.funding-first {
+		margin-right: 2%;
+	}
+	.funding-last {
+		margin-left: 2%;
+	}
+}
+
+//// CAREER DEV AWARD/DEV GRANT RECIPIENTS
+.field--name-field-winner-image {
+	float: left;
+	margin: 0 25px 0 0;
+	img {
+		display: block;
+		margin: 0;
+	}
+}
+
+// DEDICATIONS
+.node-type-dedication {
+	article {
+		img {
+			float: right;
+			margin: 0 0 25px 25px;
+		}
+	}
+}
+
+// DONATE 
+.page-node-68, .l-region--highlighted {
+	.btn-reg {
+		width: 30%;
+	}
+}
+
+// DONATE IN HONOR OF A LOVED ONE BLOCK //
+#block-block-27 {
+	.btn-reg {
+		width: 30%;
+	}
+}
+
+

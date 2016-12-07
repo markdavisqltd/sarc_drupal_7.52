@@ -1,0 +1,15 @@
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+
+@import "../../variables/**/*";
+
+.l-page {
+	margin: 0 auto;
+	@include breakpoint($tablet) {
+		width: $tablet;
+	}
+	@include breakpoint($desktop) {
+		width: $desktop;
+	}
+}

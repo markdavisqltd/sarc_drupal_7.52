@@ -1,0 +1,95 @@
+@media all and (max-width: 800px) {
+  #toolbar, #admin-menu {
+    display: none;
+  }
+
+  html body.toolbar, html body.admin-menu {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+.homepage-featured-teaser {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.sarc-featured-leader {
+  padding-left: 25px;
+}
+
+.block--views-drp-block, .block--views-drp-block-1, .block--views-drp-block-2, .block--views-drp-block-3,
+.block--views-drp-block-4, .block--views-drp-block-5, .block--views-drp-block-6, .block--views-drp-block-7,
+.block--views-drp-block-8, .block--views-drp-block-9 {
+  border: 1px solid #c7c7c7;
+  margin-bottom: 2rem !important;
+}
+.block--views-drp-block h2.block__title, .block--views-drp-block-1 h2.block__title, .block--views-drp-block-2 h2.block__title, .block--views-drp-block-3 h2.block__title,
+.block--views-drp-block-4 h2.block__title, .block--views-drp-block-5 h2.block__title, .block--views-drp-block-6 h2.block__title, .block--views-drp-block-7 h2.block__title,
+.block--views-drp-block-8 h2.block__title, .block--views-drp-block-9 h2.block__title {
+  background: #d9f5f9 none repeat scroll 0 0;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+.block--views-drp-block .views-field-body, .block--views-drp-block-1 .views-field-body, .block--views-drp-block-2 .views-field-body, .block--views-drp-block-3 .views-field-body,
+.block--views-drp-block-4 .views-field-body, .block--views-drp-block-5 .views-field-body, .block--views-drp-block-6 .views-field-body, .block--views-drp-block-7 .views-field-body,
+.block--views-drp-block-8 .views-field-body, .block--views-drp-block-9 .views-field-body {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.block--views-drp-block .views-field-title, .block--views-drp-block .views-field-field-recipients, .block--views-drp-block-1 .views-field-title, .block--views-drp-block-1 .views-field-field-recipients, .block--views-drp-block-2 .views-field-title, .block--views-drp-block-2 .views-field-field-recipients, .block--views-drp-block-3 .views-field-title, .block--views-drp-block-3 .views-field-field-recipients,
+.block--views-drp-block-4 .views-field-title,
+.block--views-drp-block-4 .views-field-field-recipients, .block--views-drp-block-5 .views-field-title, .block--views-drp-block-5 .views-field-field-recipients, .block--views-drp-block-6 .views-field-title, .block--views-drp-block-6 .views-field-field-recipients, .block--views-drp-block-7 .views-field-title, .block--views-drp-block-7 .views-field-field-recipients,
+.block--views-drp-block-8 .views-field-title,
+.block--views-drp-block-8 .views-field-field-recipients, .block--views-drp-block-9 .views-field-title, .block--views-drp-block-9 .views-field-field-recipients {
+  font-weight: bold;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.block--views-drp-block .views-field-title span, .block--views-drp-block .views-field-field-recipients span, .block--views-drp-block-1 .views-field-title span, .block--views-drp-block-1 .views-field-field-recipients span, .block--views-drp-block-2 .views-field-title span, .block--views-drp-block-2 .views-field-field-recipients span, .block--views-drp-block-3 .views-field-title span, .block--views-drp-block-3 .views-field-field-recipients span,
+.block--views-drp-block-4 .views-field-title span,
+.block--views-drp-block-4 .views-field-field-recipients span, .block--views-drp-block-5 .views-field-title span, .block--views-drp-block-5 .views-field-field-recipients span, .block--views-drp-block-6 .views-field-title span, .block--views-drp-block-6 .views-field-field-recipients span, .block--views-drp-block-7 .views-field-title span, .block--views-drp-block-7 .views-field-field-recipients span,
+.block--views-drp-block-8 .views-field-title span,
+.block--views-drp-block-8 .views-field-field-recipients span, .block--views-drp-block-9 .views-field-title span, .block--views-drp-block-9 .views-field-field-recipients span {
+  font-weight: bold !important;
+}
+.block--views-drp-block .views-field-title li, .block--views-drp-block .views-field-field-recipients li, .block--views-drp-block-1 .views-field-title li, .block--views-drp-block-1 .views-field-field-recipients li, .block--views-drp-block-2 .views-field-title li, .block--views-drp-block-2 .views-field-field-recipients li, .block--views-drp-block-3 .views-field-title li, .block--views-drp-block-3 .views-field-field-recipients li,
+.block--views-drp-block-4 .views-field-title li,
+.block--views-drp-block-4 .views-field-field-recipients li, .block--views-drp-block-5 .views-field-title li, .block--views-drp-block-5 .views-field-field-recipients li, .block--views-drp-block-6 .views-field-title li, .block--views-drp-block-6 .views-field-field-recipients li, .block--views-drp-block-7 .views-field-title li, .block--views-drp-block-7 .views-field-field-recipients li,
+.block--views-drp-block-8 .views-field-title li,
+.block--views-drp-block-8 .views-field-field-recipients li, .block--views-drp-block-9 .views-field-title li, .block--views-drp-block-9 .views-field-field-recipients li {
+  list-style: none;
+}
+.block--views-drp-block .views-field-title ul, .block--views-drp-block .views-field-field-recipients ul, .block--views-drp-block-1 .views-field-title ul, .block--views-drp-block-1 .views-field-field-recipients ul, .block--views-drp-block-2 .views-field-title ul, .block--views-drp-block-2 .views-field-field-recipients ul, .block--views-drp-block-3 .views-field-title ul, .block--views-drp-block-3 .views-field-field-recipients ul,
+.block--views-drp-block-4 .views-field-title ul,
+.block--views-drp-block-4 .views-field-field-recipients ul, .block--views-drp-block-5 .views-field-title ul, .block--views-drp-block-5 .views-field-field-recipients ul, .block--views-drp-block-6 .views-field-title ul, .block--views-drp-block-6 .views-field-field-recipients ul, .block--views-drp-block-7 .views-field-title ul, .block--views-drp-block-7 .views-field-field-recipients ul,
+.block--views-drp-block-8 .views-field-title ul,
+.block--views-drp-block-8 .views-field-field-recipients ul, .block--views-drp-block-9 .views-field-title ul, .block--views-drp-block-9 .views-field-field-recipients ul {
+  padding: 0;
+  margin-bottom: 0;
+}
+.block--views-drp-block .views-field-field-affiliation, .block--views-drp-block-1 .views-field-field-affiliation, .block--views-drp-block-2 .views-field-field-affiliation, .block--views-drp-block-3 .views-field-field-affiliation,
+.block--views-drp-block-4 .views-field-field-affiliation, .block--views-drp-block-5 .views-field-field-affiliation, .block--views-drp-block-6 .views-field-field-affiliation, .block--views-drp-block-7 .views-field-field-affiliation,
+.block--views-drp-block-8 .views-field-field-affiliation, .block--views-drp-block-9 .views-field-field-affiliation {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.block--views-drp-block .views-field-field-affiliation li, .block--views-drp-block-1 .views-field-field-affiliation li, .block--views-drp-block-2 .views-field-field-affiliation li, .block--views-drp-block-3 .views-field-field-affiliation li,
+.block--views-drp-block-4 .views-field-field-affiliation li, .block--views-drp-block-5 .views-field-field-affiliation li, .block--views-drp-block-6 .views-field-field-affiliation li, .block--views-drp-block-7 .views-field-field-affiliation li,
+.block--views-drp-block-8 .views-field-field-affiliation li, .block--views-drp-block-9 .views-field-field-affiliation li {
+  list-style: none;
+}
+.block--views-drp-block .views-field-field-affiliation ul, .block--views-drp-block-1 .views-field-field-affiliation ul, .block--views-drp-block-2 .views-field-field-affiliation ul, .block--views-drp-block-3 .views-field-field-affiliation ul,
+.block--views-drp-block-4 .views-field-field-affiliation ul, .block--views-drp-block-5 .views-field-field-affiliation ul, .block--views-drp-block-6 .views-field-field-affiliation ul, .block--views-drp-block-7 .views-field-field-affiliation ul,
+.block--views-drp-block-8 .views-field-field-affiliation ul, .block--views-drp-block-9 .views-field-field-affiliation ul {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.front .pager {
+  display: none;
+}
+.sarc-trial-item .btn-reg {
+    width: 50% !important;
+}

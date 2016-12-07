@@ -1,0 +1,197 @@
+/*-- SARC Mixins --*/
+
+// Navigation
+@mixin nav-styles-li() {
+  border-top: 1px solid $nav-rule;
+  border-bottom: 1px solid $nav-rule;
+  padding: 0 25px;
+  margin: 0;
+}
+
+@mixin nav-styles-a() {
+  display: block;
+  margin: 10px 0;
+  color: $prim-light;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+// Border-radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Clearfix
+@mixin clearfix() {
+  overflow: hidden;
+  @include has-layout;
+}
+
+// Clinical Trials
+@mixin trials() {
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid $rule;
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  p {
+    margin-bottom: 20px;
+  }
+  .details {
+    li {
+      padding: 0;
+      margin: 0;
+      border-bottom: none;
+    }
+  }
+  .btn-main {
+    padding-top: 15px;
+    letter-spacing: 1px;
+    @include font-details(16px);
+  }
+}
+
+@mixin subhead-style() {
+  padding: 25px;
+  margin: 0 -25px;
+  background: $prim-light;
+}
+// DEEP LINK FLOATS
+@mixin deep-link-left() {
+  width: 48%;
+  float: left;
+  margin-right: 2%;
+}
+@mixin deep-link-right() {
+  width: 48%;
+  float: left;
+  margin-left: 2%;
+}
+
+//-- @font-face --//
+
+// Brandon-text Regular
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/brandontext-regular-webfont.eot');
+  src: url('../fonts/brandontext-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/brandontext-regular-webfont.woff') format('woff'),
+       url('../fonts/brandontext-regular-webfont.ttf') format('truetype'),
+       url('../fonts/brandontext-regular-webfont.svg#brandon_text_regularregular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+// Brandon-text Regular Italic
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/brandontext-regularitalic-webfont.eot');
+  src: url('../fonts/brandontext-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/brandontext-regularitalic-webfont.woff') format('woff'),
+       url('../fonts/brandontext-regularitalic-webfont.ttf') format('truetype'),
+       url('../fonts/brandontext-regularitalic-webfont.svg#brandon_textregular_italic') format('svg');
+  font-weight: 400;
+  font-style: italic;
+
+}
+// Brandon-text Medium
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/brandontext-medium-webfont.eot');
+  src: url('../fonts/brandontext-medium-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/brandontext-medium-webfont.woff') format('woff'),
+       url('../fonts/brandontext-medium-webfont.ttf') format('truetype'),
+       url('../fonts/brandontext-medium-webfont.svg#brandon_textmedium') format('svg');
+  font-weight: 600;
+  font-style: bold;
+}
+// Brandon-text Medium Italic
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/brandontext-mediumitalic-webfont.eot');
+  src: url('../fonts/brandontext-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/brandontext-mediumitalic-webfont.woff') format('woff'),
+       url('../fonts/brandontext-mediumitalic-webfont.ttf') format('truetype'),
+       url('../fonts/brandontext-mediumitalic-webfont.svg#brandon_textmedium_italic') format('svg');
+  font-weight: 600;
+  font-style: italic;
+}
+// Brandon-text Bold
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/brandontext-bold-webfont.eot');
+  src: url('../fonts/brandontext-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/brandontext-bold-webfont.woff') format('woff'),
+       url('../fonts/brandontext-bold-webfont.ttf') format('truetype'),
+       url('../fonts/brandontext-bold-webfont.svg#brandon_textbold') format('svg');
+  font-weight: 700;
+  font-style: bold;
+}
+// Brandon-text Black
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('../fonts/brandontext-black-webfont.eot');
+  src: url('../fonts/brandontext-black-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/brandontext-black-webfont.woff') format('woff'),
+       url('../fonts/brandontext-black-webfont.ttf') format('truetype'),
+       url('../fonts/brandontext-black-webfont.svg#brandon_textblack') format('svg');
+  font-weight: 900;
+  font-style: bold;
+}
+
+//fonts
+@mixin font-details($size: null, $color: null, $weight: null, $height: null, $family: null) {
+  @if $family != null {
+    @if $height != null {
+      @if $size != null {
+        font: $weight #{$size}/#{$height} $family; // this will work even if $weight == null
+      } @else {
+        font-family: $family;
+        line-height: $height;
+        @if $weight != null {
+          font-weight: $weight;
+        }
+      }      
+    } @else {
+      @if $size != null {
+        font: $weight $size $family; // this will work even if $weight == null
+      } @else {
+        font-family: $family;
+        @if $weight != null {
+          font-weight: $weight;
+        }
+      }
+    }
+  } @else {
+    @if $size != null {
+      font-size: $size;
+    } 
+    @if $weight != null {
+      font-weight: $weight;
+    }
+    @if $height != null {
+      line-height: $height;
+    }
+  }
+  @if $color != null {
+    color: $color;
+  }
+}
+
+// Brandon-text
+@mixin btext($size: null, $color: null, $weight: null, $height: null) {
+  $family: 'Brandon Text';
+  @include font-details($size, $color, $weight, $height, $family);
+}
+@mixin notos($size: null, $color: null, $weight: null, $height: null) {
+  $family: 'Noto Serif';
+  @include font-details($size, $color, $weight, $height, $family);
+}
+
+
+

@@ -1,0 +1,545 @@
+//// GRID STYLES
+
+// SIDEBAR LAYOUT
+.not-front {
+	.l-content {
+		@include grid-span(8, 1);
+	}
+}
+
+.not-front {
+	.l-region--sidebar-first {
+		@include grid-span(4, 9);
+	}
+}
+
+// NO SIDEBAR
+.page-node-26 {
+	.l-content {
+		@include grid-span(12, 1);
+		//padding: 25px 0 0;
+	}
+
+}
+
+//// CURRENT PAGE
+
+//// PAGE STYLES
+.page-node-38 {
+	.l-header {
+		border-bottom: none;
+	}
+}
+
+.front, .node-type-page, .page-node-43, .page-node-38, .page-node-126 {
+	.l-region--highlighted {
+		border-top: 1px solid $rule;
+	}
+}
+
+.front {
+	.l-region--highlighted {
+		margin: 0 0 25px 0;
+		width: 100%;
+	}
+	.l-content {
+		padding: 0 25px 25px 25px;
+		max-width: 1024px;
+		margin: 0 auto;
+	}
+	.region-content {
+		padding: 0 25px;
+	}
+}
+
+// RESTRICT CONTAINER 
+
+.not-front {
+	.l-main {
+		max-width: 1024px;
+		margin: 0 auto;
+	}
+}
+
+.node-type-secondary-landing-page .page-node-38 {
+	.l-main {
+		max-width: auto;
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+.l-branding, .l-region--footer, .container, .block--views, #block-block-23, .page-node-126 .view-intro-sarc-centers-map {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.page-node-126 .block--views {
+	max-width: 100%;
+	margin: 0;
+}
+
+#block-block-24 {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+//// UTILITY STYLES
+.deep-link-float {
+	width: 100%;
+	float: none;
+}
+
+.deep-link-right {
+	margin-left: 0;
+}
+
+.deep-link-left {
+	margin-right: 0;
+}
+
+.support-text {
+	font-size: 11px;
+}
+
+.l-region--highlighted {
+	width: 100%;
+}
+
+.views-field-field-intro {
+	p {
+		width: 65.95745%;
+	}
+}
+
+.page-node-38 {
+	.views-field-field-intro {
+		p {
+			width: 100%;
+		}
+	}
+}
+
+.l-region--highlighted {
+	.intro-text, .intro-btns {
+		width: 65.95745%;
+	}
+}
+
+.mobile-redirect {
+	display: none;
+	visibility: hidden;
+}
+
+//// SECTION STYLES
+
+// IMAGE REPLACE HEIGHT 
+.page-node-27, .page-node-76, .page-node-32, .page-node-79, .page-node-70, .page-node-36, .page-node-37, .page-node-41  {
+	.field--name-field-intro-img-text {
+		min-height: 195px;
+	}
+}
+
+.not-front {
+	.l-header {
+		border-bottom: 1px solid $rule;
+	}
+}
+
+.node-type-page {
+	.l-header {
+		border-bottom: none;
+	}
+}
+
+.l-branding {
+	position: relative;
+	padding: 25px 0 0;
+	display: table;
+	width: 1024px;
+	overflow: visible;
+	margin: 0 auto;
+	.site-logo {
+		display: block;
+		margin-top: 20px;
+		float: left;
+	}
+	ul li.leaf {
+		list-style: none;
+	}
+	.pull-menu {
+		display: none;
+	}
+}
+
+.l-region--branding {
+	//@include clearfix();
+}
+
+//// SITE LOGO
+#block-block-37 {
+	margin: 35px 0 25px 25px;
+}
+
+#block-menu-menu-main-navigation {
+	display: block;
+	margin-right: 25px;
+	margin-top: 52px;
+	float: right;
+	background: none;
+	ul {
+		li {
+			display: inline-block;
+			padding: 10px 15px 0;
+			position: relative;
+			border-top: none;
+			border-bottom: none;
+			&.last {
+				//padding-right: 0;
+			}
+			&:hover {
+				background: $secondary;
+				a {
+					color: $prim-light;
+				}
+			}
+			&.last {
+				ul {
+					left: auto;
+					right: 0;
+				}
+			}
+			ul {
+				margin: 0;
+				padding: 10px;
+				z-index: 1000;
+				position: absolute;
+				top: 45px;
+				left: 0;
+				margin: 0;
+				width: 200px;
+				background: $secondary;
+				li {
+					padding: 10px;
+					float: none;
+					width: 100%;
+					border-top: none;
+					border-bottom: none;
+					background: $secondary;
+					&:hover {
+						a {
+							color: $white;
+						}
+					}
+					&.first {
+						border-top: none;
+					}
+					a {
+						-webkit-transition: color 0.3s ease;
+						-moz-transition: color 0.3s ease;
+						transition: color 0.3s ease;
+						color: $prim-light;
+					}
+				}
+			}
+			&:hover ul {
+				display: block;
+			}
+			a {
+				@include font-details(14px, $primary, 600);
+			}
+			i {
+				display: none;
+			}
+		}
+		a.active {
+			color: $secondary;
+		}
+	}
+}
+
+#block-menu-menu-utility-nav {
+	display: block;
+	background: none;
+	position: absolute;
+	top: 23px;
+	right: 250px;
+	li {
+		display: inline-block;
+		padding: 0 10px;
+		border-top: none;
+		border-bottom: none;
+		a {
+			@include font-details(12px, $secondary, 600);
+		}
+	}
+}
+
+#block-search-form {
+	display: block;
+	margin-top: 0;
+	padding: 0;
+	width: 225px;
+	position: absolute;
+	top: 25px; 
+	right: 6px;
+	background: none;
+	input {
+		margin: 0;
+		border: 1px solid $rule;
+		&.form-submit {
+			padding: 0;
+			margin-left: -4px;
+			width: 30px;
+			background: $secondary;
+		}
+	}
+}
+
+// HOMEPAGE (FRONT)
+#block-block-5 {
+	p {
+		width: 75%;
+		margin: 0 auto;
+		@include notos(24px, null, null, 150%);
+	}
+}
+
+.view-homepage-feature {
+	overflow: hidden;
+	.views-row {
+		width: 22%;
+		float: left;
+		margin: 0 2%;
+	}
+	.views-row-1 {
+		margin-left: 0;
+	}
+	.views-row-4 {
+		margin-right: 0;
+	}
+}
+
+.feature-link {
+	min-height: 90px;
+}
+
+.event-center-first {
+	width: 15%;
+}
+
+.event-center-mid {
+	padding-left: 35px;
+	width: 55%;
+}
+
+.event-center-last {
+	width: 30%;
+}
+
+.event-location { 
+	li {
+		&:nth-last-child(2), &:last-child {
+			display: inline-block;
+		}
+		&:nth-last-child(2) {
+			padding-right: 10px;
+			margin-right: 5px;
+			border-right: 1px solid $sec-med;
+		}
+	}
+}
+
+.view-news-feature, .view-bio-feature {
+	height: 320px;
+}
+
+// SIDEBAR
+.l-region--sidebar-first {
+	padding-left: 0;
+	margin-top: 30px;
+	#block-block-6, #block-block-7 {
+	 	width: 100%;
+	 	float: none;
+	 	margin: 0;
+	}
+	#block-block-9, #block-block-10 {
+		width: 100%;
+		float: none;
+	}
+	#block-block-9 {
+		margin-right: 0;
+	}
+	#block-block-10 {
+		margin-left: 0;
+	}
+	#block-block-18 {
+		width: 100%;
+		margin-left: 0;
+	}
+	#block-block-20 {
+		width: 100%;
+		margin-left: 0;
+	}
+}
+
+// FOOTER
+.l-footer {
+	clear: both;
+	.soc-icons {
+		width: 30%;
+	}
+}
+
+#block-views-newsletter-feature-block {
+	form {
+		@include clearfix();
+		input {
+			&.form-submit {
+				margin-top: 21px;
+			}
+		}
+	}
+	.form-item {
+		width: 70%;
+		float: left;
+	}
+	.form-actions {
+		margin-left: 2%;
+		width: 28%;
+		float: left;
+	}
+}
+
+.footer-utility-nav {
+	width: 18%;
+}
+
+// JOIN SARC
+
+//// SARC CENTERS
+.page-node-38, .page-node-126 {
+	.l-main {
+		max-width: 100%;
+	}
+	.l-content {
+		@include grid-span(12, 1);
+	}
+	.l-region--sidebar-first {
+		@include grid-span(0, 0);
+	}
+}
+
+.centers-intro {
+	@include clearfix();
+	.sarc-centers-inner {
+		width: 68%;
+		float: left;
+		margin-right: 2%;
+	}
+	.intro-btns {
+		display: block;
+		width: 30%;
+		float: left;
+		.btn-reg {
+			margin: 0 2% 0 0;
+			width: 48%;
+			text-shadow: none;
+			@include border-radius(0);
+		}
+		.btn-right {
+			margin: 0 0 0 2%;
+		}
+	}
+}
+
+.page-node-126 {
+	.views-field-field-intro {
+		p {
+			width: 100%;
+		}
+	}
+	.l-content {
+		padding: 0;
+	}
+}
+
+body.page-node-126 a#map-link, body.page-node-38 a#list-link {
+	background: $sec-med;
+}
+
+.gmap-popup {
+	.views-field-field-site-name{
+		p {
+			margin-bottom: 5px;
+		}
+	}
+	.location {
+		color: $secondary;
+		font-weight: 400;
+	}
+}
+
+#block-views-google-map-locations-block {
+	display: block;
+	visibility: visible;
+	width: 100%;
+	img {
+		max-width: none;
+	}
+}
+
+// SARC RESEARCH
+
+//// SARC CLINICAL TRIALS
+.field--name-field-trial-status {
+	left: 152px;
+}
+
+//// DRUG DEVELOPMENT
+.value-graph {
+	.circle {
+		padding: 10px;
+		width: 150px;
+		height: 150px;
+	}
+
+	.icon-plus {
+		margin: 60px 0 0 0;
+		width: 50px;
+		float: left;
+	}
+}
+
+//// SARC MEETING AT ASCO
+.page-node-39, .page-node-93 {
+	.l-header {
+		border-bottom: none;
+	}
+	.l-region--highlighted {
+		border-top: 1px solid $rule;
+	}
+}
+
+//// ABOUT SARC
+
+// FUNDING OPPORTUNITIES
+.funding-list {
+	li {
+		margin-bottom: 0;
+	}
+	.btn-reg {
+		width: 100%;
+	}
+}
+
+// DONATE
+
+// DEDICATIONS
+.node-type-dedication, .node-type-bio {
+	header {
+		//border-bottom: 1px solid $rule;
+	}
+}
+
+

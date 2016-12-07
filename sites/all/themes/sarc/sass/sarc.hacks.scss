@@ -1,0 +1,87 @@
+// Hide the toolbar or admin menu on small screens.
+@media all and (max-width: 800px) {
+  #toolbar, #admin-menu {
+    display: none;
+  }
+
+  html {
+    body.toolbar, body.admin-menu {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+  }
+}
+
+//some quick tweaks
+.homepage-featured-teaser {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.sarc-featured-leader {
+    padding-left:25px;
+}
+
+//adding header styles to new DRP blocks
+
+$drp_padding: 1.5rem;
+
+.block--views-drp-block,.block--views-drp-block-1,.block--views-drp-block-2,.block--views-drp-block-3,
+.block--views-drp-block-4,.block--views-drp-block-5,.block--views-drp-block-6,.block--views-drp-block-7,
+.block--views-drp-block-8,.block--views-drp-block-9 {
+    border: 1px solid #c7c7c7;
+    margin-bottom: 2rem !important;
+
+    h2.block__title {
+        background: #d9f5f9 none repeat scroll 0 0;
+        padding: $drp_padding;
+        margin-bottom:1rem; 
+    }
+
+    .views-field-body {
+        margin-top:1rem; 
+        margin-bottom:1rem; 
+        padding-left:$drp_padding;
+        padding-right:$drp_padding;
+    }
+
+    .views-field-title, .views-field-field-recipients {
+        font-weight:bold; 
+        padding-left:$drp_padding;
+        padding-right:$drp_padding;
+        span {
+            font-weight:bold !important; 
+        }
+
+        li {
+            list-style:none; 
+        }
+
+        ul {
+            padding:0;
+            margin-bottom:0; 
+        }
+    }
+
+    .views-field-field-affiliation {
+        padding-left:$drp_padding;
+        padding-right:$drp_padding;
+
+        li {
+            list-style:none; 
+        }
+
+        ul {
+            padding:0;
+            margin-bottom:0; 
+        }
+    }
+}
+
+
+//homepage pager bug
+.front {
+    .pager {
+        display: none; 
+    }
+}

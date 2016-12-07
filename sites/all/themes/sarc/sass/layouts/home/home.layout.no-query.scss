@@ -1,0 +1,7 @@
+$breakpoint-no-queries: true;
+$breakpoint-no-query-fallbacks: true;
+
+//$touch: point coarse, 'no-query' '.touch';
+
+// Re-render everything from styles.scss but without media queries.
+@import "home.layout.scss";

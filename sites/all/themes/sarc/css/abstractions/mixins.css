@@ -1,0 +1,63 @@
+/*-- SARC Mixins --*/
+@font-face {
+  font-family: 'Brandon Text';
+  src: url("../fonts/brandontext-regular-webfont.eot");
+  src: url("../fonts/brandontext-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brandontext-regular-webfont.woff") format("woff"), url("../fonts/brandontext-regular-webfont.ttf") format("truetype"), url("../fonts/brandontext-regular-webfont.svg#brandon_text_regularregular") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url("../fonts/brandontext-regularitalic-webfont.eot");
+  src: url("../fonts/brandontext-regularitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brandontext-regularitalic-webfont.woff") format("woff"), url("../fonts/brandontext-regularitalic-webfont.ttf") format("truetype"), url("../fonts/brandontext-regularitalic-webfont.svg#brandon_textregular_italic") format("svg");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url("../fonts/brandontext-medium-webfont.eot");
+  src: url("../fonts/brandontext-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brandontext-medium-webfont.woff") format("woff"), url("../fonts/brandontext-medium-webfont.ttf") format("truetype"), url("../fonts/brandontext-medium-webfont.svg#brandon_textmedium") format("svg");
+  font-weight: 600;
+  font-style: bold; }
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url("../fonts/brandontext-mediumitalic-webfont.eot");
+  src: url("../fonts/brandontext-mediumitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brandontext-mediumitalic-webfont.woff") format("woff"), url("../fonts/brandontext-mediumitalic-webfont.ttf") format("truetype"), url("../fonts/brandontext-mediumitalic-webfont.svg#brandon_textmedium_italic") format("svg");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url("../fonts/brandontext-bold-webfont.eot");
+  src: url("../fonts/brandontext-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brandontext-bold-webfont.woff") format("woff"), url("../fonts/brandontext-bold-webfont.ttf") format("truetype"), url("../fonts/brandontext-bold-webfont.svg#brandon_textbold") format("svg");
+  font-weight: 700;
+  font-style: bold; }
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url("../fonts/brandontext-black-webfont.eot");
+  src: url("../fonts/brandontext-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brandontext-black-webfont.woff") format("woff"), url("../fonts/brandontext-black-webfont.ttf") format("truetype"), url("../fonts/brandontext-black-webfont.svg#brandon_textblack") format("svg");
+  font-weight: 900;
+  font-style: bold; }
+
+@font-face {
+  font-family: 'Noto Serif';
+  src: url("../fonts/notoserif-regular-webfont.eot");
+  src: url("../fonts/notoserif-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/notoserif-regular-webfont.woff") format("woff"), url("../fonts/notoserif-regular-webfont.ttf") format("truetype"), url("../fonts/notoserif-regular-webfont.svg#noto_serifregular") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Noto Serif';
+  src: url("../fonts/notoserif-italic-webfont.eot");
+  src: url("../fonts/notoserif-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/notoserif-italic-webfont.woff") format("woff"), url("../fonts/notoserif-italic-webfont.ttf") format("truetype"), url("../fonts/notoserif-italic-webfont.svg#noto_serifitalic") format("svg");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Noto Serif';
+  src: url("../fonts/notoserif-bold-webfont.eot");
+  src: url("../fonts/notoserif-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/notoserif-bold-webfont.woff") format("woff"), url("../fonts/notoserif-bold-webfont.ttf") format("truetype"), url("../fonts/notoserif-bold-webfont.svg#noto_serifbold") format("svg");
+  font-weight: 700;
+  font-style: bold; }
